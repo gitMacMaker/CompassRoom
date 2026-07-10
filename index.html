@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Compass Room — Coastal Fine Dining, Key West</title>
+<meta name="description" content="The Compass Room is a coastal fine-dining concept — a demonstration build by Mile Zero Studio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THE COMPASS ROOM — elegant & classic (concept build)
+   ============================================================ */
+:root {
+  --paper:  #f7f3ea;
+  --paper-2:#f1ebdd;
+  --ink:    #20242e;
+  --soft:   #5c6068;
+  --gold:   #a3843c;
+  --line:   #ddd5c2;
+  --serif: 'Cormorant Garamond', serif;
+  --sans: 'Inter', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: var(--gold); color: #fff; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  background: rgba(247,243,234,0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav__inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__brand {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 23px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav__brand span { color: var(--gold); }
+.nav__links { display: flex; align-items: center; gap: 30px; }
+.nav__links a {
+  color: var(--soft);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition: color 160ms ease;
+}
+.nav__links a:hover { color: var(--ink); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 30px;
+  transition: background 180ms ease, color 180ms ease;
+}
+.btn:hover { background: transparent; color: var(--ink); }
+.btn--line { background: transparent; color: var(--ink); }
+.btn--line:hover { background: var(--ink); color: var(--paper); }
+.nav .btn { padding: 10px 22px; font-size: 12px; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: 200px 0 130px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero__compass {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -46%);
+  width: 620px; height: 620px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+.hero .eyebrow { margin-bottom: 30px; display: block; }
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(44px, 7vw, 92px);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  max-width: 17ch;
+  margin: 0 auto;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero__sub {
+  margin: 30px auto 0;
+  max-width: 520px;
+  font-size: 18px;
+  color: var(--soft);
+}
+.hero__actions { margin-top: 44px; display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+.hero__rule {
+  width: 60px; height: 1px;
+  background: var(--gold);
+  margin: 54px auto 0;
+}
+.hero__meta {
+  margin-top: 26px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+.section { padding: 110px 0; }
+.section--alt { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section__head { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+.section__head h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(32px, 4.4vw, 52px);
+  line-height: 1.1;
+  margin-top: 18px;
+}
+.section__head h2 em { font-style: italic; color: var(--gold); }
+.section__head p { margin-top: 16px; color: var(--soft); }
+
+/* ============================================================
+   MENU
+   ============================================================ */
+.menu {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.menu__course {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 54px 0 30px;
+}
+.menu__course:first-child { margin-top: 0; }
+.dish {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 14px 0;
+}
+.dish__name {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 23px;
+  white-space: nowrap;
+}
+.dish__dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--line);
+  transform: translateY(-4px);
+}
+.dish__price {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+.dish__note {
+  margin: -8px 0 6px;
+  font-size: 15px;
+  color: var(--soft);
+  font-style: italic;
+  font-family: var(--serif);
+  font-size: 17px;
+}
+.menu__fine {
+  text-align: center;
+  margin-top: 54px;
+  font-size: 14px;
+  color: var(--soft);
+}
+
+/* ============================================================
+   STORY
+   ============================================================ */
+.story__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.story__text h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(30px, 3.6vw, 44px);
+  line-height: 1.12;
+  margin-top: 18px;
+}
+.story__text h2 em { font-style: italic; color: var(--gold); }
+.story__text p { margin-top: 20px; color: var(--soft); }
+.story__text p:first-of-type::first-letter {
+  font-family: var(--serif);
+  font-size: 3.4em;
+  float: left;
+  line-height: 0.8;
+  padding: 6px 10px 0 0;
+  color: var(--gold);
+}
+.story__panel {
+  aspect-ratio: 4/5;
+  background:
+    linear-gradient(160deg, rgba(163,132,60,0.12), transparent 55%),
+    var(--paper-2);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.story__panel svg { width: 62%; opacity: 0.75; }
+
+/* ============================================================
+   EVENINGS
+   ============================================================ */
+.rooms__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.room {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 40px 32px;
+  text-align: center;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.room:hover { border-color: var(--gold); transform: translateY(-4px); }
+.room__n {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold);
+}
+.room h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 26px;
+  margin: 10px 0 12px;
+}
+.room p { color: var(--soft); font-size: 15.5px; }
+
+/* ============================================================
+   VISIT
+   ============================================================ */
+.visit { text-align: center; }
+.visit__address {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(30px, 4vw, 46px);
+  margin-top: 18px;
+}
+.visit__hours {
+  margin: 34px auto 0;
+  max-width: 420px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.visit__hours b { display: block; color: var(--ink); font-size: 16px; letter-spacing: 0.02em; text-transform: none; font-family: var(--serif); font-weight: 600; margin-top: 4px; }
+.visit .btn { margin-top: 40px; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 64px 0;
+  text-align: center;
+}
+.footer__brand {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: 0.04em;
+}
+.footer__brand span { color: var(--gold); }
+.footer p { margin-top: 14px; font-size: 13.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,243,234,0.55); }
+.footer__credit {
+  margin-top: 34px !important;
+  padding-top: 26px;
+  border-top: 1px solid rgba(247,243,234,0.15);
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+  font-size: 14px !important;
+}
+.footer__credit a { color: var(--gold); text-decoration: none; }
+.footer__credit a:hover { text-decoration: underline; }
+
+/* ============================================================
+   REVEAL + RESPONSIVE
+   ============================================================ */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 700ms ease, transform 800ms cubic-bezier(0.16,1,0.3,1); }
+.reveal.is-in { opacity: 1; transform: none; }
+
+@media (max-width: 900px) {
+  .story__grid { grid-template-columns: 1fr; gap: 40px; }
+  .rooms__grid { grid-template-columns: 1fr; }
+  .nav__links a:not(.btn) { display: none; }
+  .hero { padding: 160px 0 100px; }
+  .section { padding: 84px 0; }
+}
+@media (max-width: 560px) {
+  .dish__name { font-size: 19px; white-space: normal; }
+  .visit__hours { flex-direction: column; gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">The Compass <span>Room</span></a>
+    <div class="nav__links">
+      <a href="#menu">Menu</a>
+      <a href="#story">About</a>
+      <a href="#visit">Visit</a>
+      <a href="#visit" class="btn">Reserve a table</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <svg class="hero__compass" viewBox="0 0 200 200" aria-hidden="true">
+    <circle cx="100" cy="100" r="96" fill="none" stroke="#20242e" stroke-width="1"/>
+    <circle cx="100" cy="100" r="78" fill="none" stroke="#20242e" stroke-width="0.5"/>
+    <path d="M100 10 L108 92 L100 100 L92 92 Z" fill="#20242e"/>
+    <path d="M100 190 L108 108 L100 100 L92 108 Z" fill="#20242e" opacity="0.4"/>
+    <path d="M10 100 L92 92 L100 100 L92 108 Z" fill="#20242e" opacity="0.4"/>
+    <path d="M190 100 L108 92 L100 100 L108 108 Z" fill="#20242e" opacity="0.4"/>
+    <text x="100" y="30" text-anchor="middle" font-family="serif" font-size="14" fill="#20242e">N</text>
+  </svg>
+  <div class="container">
+    <span class="eyebrow">Coastal fine dining · Key West</span>
+    <h1>Dinner by the water, <em>done properly.</em></h1>
+    <p class="hero__sub">
+      A small dining room, a short menu, and whatever the boats brought in this morning —
+      cooked with care and served without hurry.
+    </p>
+    <div class="hero__actions">
+      <a href="#visit" class="btn">Reserve a table</a>
+      <a href="#menu" class="btn btn--line">View the menu</a>
+    </div>
+    <div class="hero__rule"></div>
+    <p class="hero__meta">Dinner nightly · Dress easy · Arrive hungry</p>
+  </div>
+</header>
+
+<!-- ============ MENU ============ -->
+<section class="section section--alt" id="menu">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">This evening</span>
+      <h2>A short menu, <em>changed daily.</em></h2>
+      <p>What follows is a sample — the kitchen writes the board each afternoon based on the day's catch.</p>
+    </div>
+    <div class="menu reveal">
+      <div class="menu__course">— To begin —</div>
+      <div class="dish"><span class="dish__name">Conch Crudo</span><span class="dish__dots"></span><span class="dish__price">19</span></div>
+      <p class="dish__note">lime, chili oil, shaved fennel</p>
+      <div class="dish"><span class="dish__name">Charred Octopus</span><span class="dish__dots"></span><span class="dish__price">22</span></div>
+      <p class="dish__note">white beans, smoked paprika, lemon</p>
+
+      <div class="menu__course">— The catch —</div>
+      <div class="dish"><span class="dish__name">Whole Yellowtail Snapper</span><span class="dish__dots"></span><span class="dish__price">44</span></div>
+      <p class="dish__note">brown butter, capers, herbs from the garden</p>
+      <div class="dish"><span class="dish__name">Grilled Gulf Shrimp</span><span class="dish__dots"></span><span class="dish__price">38</span></div>
+      <p class="dish__note">saffron rice, shellfish reduction</p>
+
+      <div class="menu__course">— To finish —</div>
+      <div class="dish"><span class="dish__name">Key Lime Posset</span><span class="dish__dots"></span><span class="dish__price">14</span></div>
+      <p class="dish__note">torched meringue, graham crumble</p>
+
+      <p class="menu__fine">Sample menu for demonstration. The real board changes with the tide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY ============ -->
+<section class="section" id="story">
+  <div class="container">
+    <div class="story__grid">
+      <div class="story__text reveal">
+        <span class="eyebrow">The room</span>
+        <h2>Twelve tables, <em>one compass.</em></h2>
+        <p>
+          The Compass Room seats forty on a good night. The menu is short on purpose —
+          a kitchen that does five things beautifully will always beat one that does fifty adequately.
+        </p>
+        <p>
+          Fish comes off the dock, not off a truck. The wine list fits on one page.
+          And the pace is set by the tide, not the turn time.
+        </p>
+      </div>
+      <div class="story__panel reveal" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="#a3843c" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="72" fill="none" stroke="#a3843c" stroke-width="0.75"/>
+          <path d="M100 22 L110 90 L100 100 L90 90 Z" fill="#a3843c"/>
+          <path d="M100 178 L110 110 L100 100 L90 110 Z" fill="#20242e" opacity="0.6"/>
+          <path d="M22 100 L90 90 L100 100 L90 110 Z" fill="#20242e" opacity="0.6"/>
+          <path d="M178 100 L110 90 L100 100 L110 110 Z" fill="#20242e" opacity="0.6"/>
+          <circle cx="100" cy="100" r="6" fill="#20242e"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENINGS ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Evenings</span>
+      <h2>Three ways to <em>spend one.</em></h2>
+    </div>
+    <div class="rooms__grid">
+      <div class="room reveal">
+        <span class="room__n">No. 1</span>
+        <h3>The Dining Room</h3>
+        <p>The main event. Candlelight, the night's board, and no one rushing you toward dessert.</p>
+      </div>
+      <div class="room reveal">
+        <span class="room__n">No. 2</span>
+        <h3>The Bar</h3>
+        <p>Walk-ins only. Oysters, cold glasses, and the best seat for watching the kitchen work.</p>
+      </div>
+      <div class="room reveal">
+        <span class="room__n">No. 3</span>
+        <h3>The Verandah</h3>
+        <p>Eight seats outside under the fans — first come, first seated, gone by sunset.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VISIT ============ -->
+<section class="section visit" id="visit">
+  <div class="container reveal">
+    <span class="eyebrow">Find us</span>
+    <p class="visit__address">At the quiet end<br>of the harbor.</p>
+    <div class="visit__hours">
+      <div>Dinner<b>5:30 – 10:30</b></div>
+      <div>Bar<b>4:00 – late</b></div>
+      <div>Days<b>Tue – Sun</b></div>
+    </div>
+    <a class="btn" href="#top">Reserve a table</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__brand">The Compass <span>Room</span></div>
+    <p>Coastal fine dining · Key West, Florida</p>
+    <p class="footer__credit">
+      The Compass Room is a fictional restaurant — this site is a concept build by
+      <a href="https://milezero.vercel.app">Mile Zero Studio</a>, showing an elegant &amp; classic style.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(en) {
+      if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

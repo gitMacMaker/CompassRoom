@@ -119,6 +119,9 @@ body {
 .btn--line { background: transparent; color: var(--ink); }
 .btn--line:hover { background: var(--ink); color: var(--paper); }
 .nav .btn { padding: 10px 22px; font-size: 12px; }
+/* .nav__links a outspecifies .btn, which muted the button text — restore it */
+.nav__links a.btn { color: var(--paper); }
+.nav__links a.btn:hover { color: var(--ink); }
 
 /* ============================================================
    HERO
